@@ -29,3 +29,10 @@ jobs:
       uses: gradle/gradle-build-action@4137be6a8bf7d7133955359dbd952c0ca73b1021
       with:
         arguments: build
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      with:
+        artifact: test-results            # artifact name
+        name: Junit Tests                  # Name of the check run which will be created
+        path: '*.xml'                     # Path to test results (inside artifact .zip)
+        reporter: java-junit              # Format of test results
