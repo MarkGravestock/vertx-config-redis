@@ -13,7 +13,8 @@ dependencies {
     // This doesn't appear to work in vertx 4
     def vertxVersion = '3.9.8'
     def testContainersVersion = '1.16.2'
-    def junitVersion = '5.7.2'
+    def junitVersion = '5.8.1'
+    def slf4jVersion = '1.7.32'
 
     testImplementation "io.vertx:vertx-redis-client:$vertxVersion"
     testImplementation "io.vertx:vertx-rx-java2:$vertxVersion"
@@ -23,9 +24,13 @@ dependencies {
     testImplementation "org.testcontainers:junit-jupiter:$testContainersVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
-    testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.30'
+    testRuntimeOnly "org.slf4j:slf4j-simple:$slf4jVersion"
 }
 
 test {
     useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
