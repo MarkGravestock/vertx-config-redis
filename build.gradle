@@ -30,6 +30,10 @@ dependencies {
 test {
     useJUnitPlatform()
 
+    reports {
+        junitXml.required = true
+    }
+
     testLogging {
         events "passed", "skipped", "failed"
     }
