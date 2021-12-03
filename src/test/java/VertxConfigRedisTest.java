@@ -1,11 +1,3 @@
-import io.vertx.config.ConfigRetrieverOptions;
-import io.vertx.config.ConfigStoreOptions;
-import io.vertx.core.json.JsonObject;
-import org.junit.jupiter.api.BeforeEach;
-import org.testcontainers.containers.GenericContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.utility.DockerImageName;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import io.vertx.config.ConfigRetrieverOptions;
