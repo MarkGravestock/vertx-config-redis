@@ -32,6 +32,7 @@ test {
 
     reports {
         junitXml.required = true
+        junitXml.outputLocation.set(layout.buildDirectory.dir("test-junit-xml"))
     }
 
     testLogging {
