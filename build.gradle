@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // This doesn't appear to work in vertx 4
+    def vertxVersion = '3.9.8'
+    def testContainersVersion = '1.16.2'
+    def junitVersion = '5.7.2'
+
+    testImplementation "io.vertx:vertx-redis-client:$vertxVersion"
+    testImplementation "io.vertx:vertx-rx-java2:$vertxVersion"
+    testImplementation "io.vertx:vertx-config:$vertxVersion"
+    testImplementation "io.vertx:vertx-config-redis:$vertxVersion"
+    testImplementation "org.testcontainers:testcontainers:$testContainersVersion"
+    testImplementation "org.testcontainers:junit-jupiter:$testContainersVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.30'
+}
+
+test {
+    useJUnitPlatform()
+}
