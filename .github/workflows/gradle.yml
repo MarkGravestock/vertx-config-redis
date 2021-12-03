@@ -33,5 +33,5 @@ jobs:
       uses: dorny/test-reporter@v1
       with:
         name: Junit Tests                  # Name of the check run which will be created
-        path: '*.xml'                     # Path to test results (inside artifact .zip)
+        path: build/test-junit-xml/*.xml                 
         reporter: java-junit              # Format of test results
