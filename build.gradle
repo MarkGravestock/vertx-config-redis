@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-group 'org.example'
+group 'com.markgravestock'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -42,15 +42,14 @@ test {
 }
 
 publishing {
-  repositories {
-    maven {
-      name = "GitHubPackages"
-      url = "https://maven.pkg.github.com/octocat/hello-world"
-      credentials {
-        username = System.getenv("GITHUB_ACTOR")
-        password = System.getenv("GITHUB_TOKEN")
-    }    
-  }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/MarkGravestock/vertx-config-redis"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
 }
-
-
