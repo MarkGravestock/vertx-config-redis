@@ -17,9 +17,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: write
     steps:
     - uses: actions/labeler@v2
       with:
